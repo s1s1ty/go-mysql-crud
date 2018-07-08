@@ -1,0 +1,25 @@
+version: '2'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - 8005:8005
+    links:
+      - mysql
+    environment:
+      - "DB_PORT=3306"
+      - "DB_HOST=mysql" 
+  
+  mysql:
+    image: mysql:5.7
+    environment:
+      - "MYSQL_ROOT_PASSWORD=12345"
+      - "MYSQL_DATABASE=go-mysql-crud"
+    ports:
+      - 33066:3306
+    volumes:
+      - /mysql:/var/lib/mysql
+    
