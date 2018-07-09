@@ -1,2 +1,4 @@
-vendor/
-.idea
+/vendor
+/go-mysql-crud
+.DS_Store
+.idea/
