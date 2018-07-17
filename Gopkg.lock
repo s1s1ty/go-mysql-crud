@@ -2,6 +2,12 @@
 
 
 [[projects]]
+  name = "github.com/davecgh/go-spew"
+  packages = ["spew"]
+  revision = "346938d642f2ec3594ed81d874461961cd0faa76"
+  version = "v1.1.0"
+
+[[projects]]
   name = "github.com/go-chi/chi"
   packages = [
     ".",
@@ -25,6 +31,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "96b78af586677e9d9eb664e3e0b2a513150a5fab3d4c732da731df622ec3ca38"
+  inputs-digest = "21370a683635e7872561761bbd51c8547a33a74fff640a46b6c95ceb734275ed"
   solver-name = "gps-cdcl"
   solver-version = 1
