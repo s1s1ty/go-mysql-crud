@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"net/http"
+	"os"
 
 	"github.com/go-chi/chi"
 	"github.com/go-chi/chi/middleware"
@@ -11,14 +12,17 @@ import (
 )
 
 func main() {
-	dbName := "go-mysql-crud"
-	dbPass := "12345"
-	dbHost := "localhost"
-	dbPort := "33066"
+	dbName := os.Getenv("DB_NAME")
+	dbPass := os.Getenv("DB_PASS")
+	dbHost := os.Getenv("DB_HOST")
+	dbPort := os.Getenv("DB_PORT")
+
+	println("this is db", dbName, dbHost, dbPass, dbPort)
 
 	connection, err := driver.ConnectSQL(dbHost, dbPort, "root", dbPass, dbName)
 	if err != nil {
 		fmt.Println(err)
+		os.Exit(-1)
 	}
 
 	r := chi.NewRouter()

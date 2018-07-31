@@ -38,3 +38,18 @@ Sample crud operation using Golang and MySql
     * [MySql](https://github.com/go-sql-driver/mysql)
 - Routing
     * [chi](https://github.com/go-chi/chi)
+
+## Quick Run Project
+First clone the repo then go to go-mysql-crud folder. After that build your image and run by docker. Make sure you have docker in your machine. 
+
+```
+git clone https://github.com/s1s1ty/go-mysql-crud.git
+
+cd go-mysql-crud
+
+chmod +x run.sh
+./run.sh
+
+docker-compose up
+```
+
