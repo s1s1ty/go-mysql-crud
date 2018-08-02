@@ -17,8 +17,6 @@ func main() {
 	dbHost := os.Getenv("DB_HOST")
 	dbPort := os.Getenv("DB_PORT")
 
-	println("this is db", dbName, dbHost, dbPass, dbPort)
-
 	connection, err := driver.ConnectSQL(dbHost, dbPort, "root", dbPass, dbName)
 	if err != nil {
 		fmt.Println(err)

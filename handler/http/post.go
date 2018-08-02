@@ -1,7 +1,6 @@
 package handler
 
 import (
-	"context"
 	"encoding/json"
 	"fmt"
 	"net/http"
@@ -28,7 +27,7 @@ type Post struct {
 
 // Fetch all post data
 func (p *Post) Fetch(w http.ResponseWriter, r *http.Request) {
-	payload, _ := p.repo.Fetch(r.context(), 5)
+	payload, _ := p.repo.Fetch(r.Context(), 5)
 
 	respondwithJSON(w, http.StatusOK, payload)
 }
@@ -38,7 +37,7 @@ func (p *Post) Create(w http.ResponseWriter, r *http.Request) {
 	post := models.Post{}
 	json.NewDecoder(r.Body).Decode(&post)
 
-	newID, err := p.repo.Create(r.context(), &post)
+	newID, err := p.repo.Create(r.Context(), &post)
 	fmt.Println(newID)
 	if err != nil {
 		respondWithError(w, http.StatusInternalServerError, "Server Error")
@@ -52,7 +51,7 @@ func (p *Post) Update(w http.ResponseWriter, r *http.Request) {
 	id, _ := strconv.Atoi(chi.URLParam(r, "id"))
 	data := models.Post{ID: int64(id)}
 	json.NewDecoder(r.Body).Decode(&data)
-	payload, err := p.repo.Update(r.context(), &data)
+	payload, err := p.repo.Update(r.Context(), &data)
 
 	if err != nil {
 		respondWithError(w, http.StatusInternalServerError, "Server Error")
@@ -64,7 +63,7 @@ func (p *Post) Update(w http.ResponseWriter, r *http.Request) {
 // GetByID returns a post details
 func (p *Post) GetByID(w http.ResponseWriter, r *http.Request) {
 	id, _ := strconv.Atoi(chi.URLParam(r, "id"))
-	payload, err := p.repo.GetByID(r.context(), int64(id))
+	payload, err := p.repo.GetByID(r.Context(), int64(id))
 
 	if err != nil {
 		respondWithError(w, http.StatusNoContent, "Content not found")
@@ -76,7 +75,7 @@ func (p *Post) GetByID(w http.ResponseWriter, r *http.Request) {
 // Delete a post
 func (p *Post) Delete(w http.ResponseWriter, r *http.Request) {
 	id, _ := strconv.Atoi(chi.URLParam(r, "id"))
-	_, err := p.repo.Delete(r.context(), int64(id))
+	_, err := p.repo.Delete(r.Context(), int64(id))
 
 	if err != nil {
 		respondWithError(w, http.StatusInternalServerError, "Server Error")
