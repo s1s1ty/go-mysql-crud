@@ -10,7 +10,7 @@ Sample crud operation using Golang and MySql
 - Response: `200`
 
 ### Create Post
-- Path : `/posts/create`
+- Path : `/posts`
 - Method: `POST`
 - Fields: `title, content`
 - Response: `201`
@@ -21,7 +21,7 @@ Sample crud operation using Golang and MySql
 - Response: `200`
 
 ### Update Post
-- Path : `/posts/update/{id}`
+- Path : `/posts/{id}`
 - Method: `PUT`
 - Fields: `title, content`
 - Response: `200`
