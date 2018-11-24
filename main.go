@@ -30,8 +30,8 @@ func main() {
 	pHandler := ph.NewPostHandler(connection)
 	r.Get("/posts", pHandler.Fetch)
 	r.Get("/posts/{id}", pHandler.GetByID)
-	r.Post("/posts/create", pHandler.Create)
-	r.Put("/posts/update/{id}", pHandler.Update)
+	r.Post("/posts", pHandler.Create)
+	r.Put("/posts/{id}", pHandler.Update)
 	r.Delete("/posts/{id}", pHandler.Delete)
 
 	fmt.Println("Server listen at :8005")
