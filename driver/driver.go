@@ -18,7 +18,6 @@ var dbConn = &DB{}
 
 // ConnectSQL ...
 func ConnectSQL(host, port, uname, pass, dbname string) (*DB, error) {
-
 	dbSource := fmt.Sprintf(
 		"root:%s@tcp(%s:%s)/%s?charset=utf8",
 		pass,
@@ -32,10 +31,4 @@ func ConnectSQL(host, port, uname, pass, dbname string) (*DB, error) {
 	}
 	dbConn.SQL = d
 	return dbConn, err
-}
-
-// ConnectMgo ....
-func ConnectMgo(host, port, uname, pass string) error {
-
-	return nil
 }
