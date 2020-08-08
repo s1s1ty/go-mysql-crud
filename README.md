@@ -1,6 +1,3 @@
-“[go-mysql-crud] is being sponsored by the following tool; please help to support us by taking a look and signing up to a free trial”
-<!--<a href="https://tracking.gitads.io/?repo=go-mysql-crud"> <img src="https://images.gitads.io/go-mysql-crud" alt="GitAds"/> </a>-->
-
 # go-mysql-crud
 Sample crud operation using Golang and MySql
 
