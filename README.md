@@ -1,10 +1,6 @@
 # go-mysql-crud
 Sample crud operation using Golang and MySql
 
-## Support For This Project
-`go-mysql-crud` is being sponsored by the following tool; please help to support us by taking a look and signing up to a free trial.
-[![GitAds](https://images.gitads.io/go-mysql-crud)](https://tracking.gitads.io/?repo=go-mysql-crud)
-
 ## API ENDPOINTS
 
 ### All Posts
